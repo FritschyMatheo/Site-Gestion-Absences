@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'SAE_GA/style.css' %}" />
+    <title>{% block title %}Gestion des absences {% endblock %}</title>
+  </head>
+  <body>
+    <aside id="sidebar">
+      {% block sidebar %}
+      <nav>
+        <a href="/SAE_GA/">Accueil</a>
+        <a href="/SAE_GA/">Les enseignants</a>
+        <a href="/SAE_GA/">Les étudiants</a>
+        <a href="/SAE_GA/">Les groups d'étudiants</a>
+      </nav>
+      {% endblock %}
+    </aside>
+    <div id="content">
+      <main>
+        {% block content %}
+        <h1>bloc principal</h1>
+        {% endblock %}
+      </main>
+    </div>
+  </body>
+  <footer id="fin">
+    {% block footer %}
+    <strong>Projet Django</strong>
+    <h4>SAE23</h4>
+    <a href="https://github.com/FritschyMatheo/Site-Gestion-Absences">
+      <img
+        src="../../static/SAE_GA/Images/github-mark-white.png"
+        alt="Lien Github"
+        width="24"
+      />
+    </a>
+    {% endblock %}
+  </footer>
+</html>

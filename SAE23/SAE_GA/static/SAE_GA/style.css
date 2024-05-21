@@ -1,0 +1,92 @@
+/*------------ Base ------------*/
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+#content{
+    display: flex;
+    align-items: start;
+    flex-grow: 1;
+    background-color:rgb(193, 227, 255) ;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: 0px auto;
+    padding: 5px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+h1{
+    color: #ff2020;
+}
+
+h2,h3,h4{
+    align-self: flex-start;
+    margin: 4px;
+}
+
+nav{
+    background-color: #8ac1ff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a{
+    color: #ffffff;
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #ff2020;
+}
+
+
+/*------------ Articles ------------*/
+
+
+article{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    border: black;
+}
+
+article footer{
+    align-self: flex-end;
+    margin: 5px;
+    border: black;
+    padding: 6px;
+    padding-inline: 8px;
+}
+
+footer#fin{
+    background-color: #4e4c4a;
+    padding: 5px;
+    padding-inline: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
