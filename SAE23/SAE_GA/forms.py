@@ -21,3 +21,14 @@ class GroupeForm(ModelForm):
             labels = {
             'nom' : _('Nom'),
             }
+
+
+class EnseignantForm(ModelForm):
+    class Meta:
+        model = models.Enseignant
+        fields = ('nom', 'prenom', 'email')
+        labels = {
+            'nom' : _('Nom'),
+            'prenom' : _('Prénom'),
+            'email' : _('Email')
+        }
