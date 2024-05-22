@@ -1,0 +1,16 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Page d'accueil des groupes d'étudiants {% endblock %} {% block content %}
+<h1>Bienvenue sur la page d'accueil des groupes d'étudiants</h1>
+<article>
+    <footer><a href="/SAE_GA/Groupe/ajout">Ajouter un groupe étudiants</a></footer>
+<ol>
+    {% for l in liste %}
+          <li>{{l}} <a href="/SAE_GA/Groupe/affiche/{{l.id}}">Afficher les informations du groupe</a> <a href="/SAE_GA/Groupe/update/{{l.id}}">Actualiser les informations du groupe</a>
+              <a href="/SAE_GA/Groupe/delete/{{l.id}}">Supprimer le groupe</a></li>
+    {% endfor %}
+
+</ol>
+    </article>
+
+{% endblock %}
