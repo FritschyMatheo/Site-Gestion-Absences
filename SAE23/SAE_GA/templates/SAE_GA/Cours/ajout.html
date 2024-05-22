@@ -1,0 +1,19 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Ajout cours {% endblock %} {% block content %}
+  
+<article>
+    <h2>Ajout d'un cours</h2>
+    
+        {% if id %}
+            <form method="post" action="/SAE_GA/Groupe/traitementupdate/{{id}}/">
+         {% else %}
+            <form method="post" action="/SAE_GA/Groupe/traitement/">
+         {% endif %}
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Envoyer les données"/>
+        </form>
+    </article>
+
+{% endblock %}
