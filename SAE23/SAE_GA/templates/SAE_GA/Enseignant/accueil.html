@@ -1,0 +1,14 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Page d'accueil des enseignants{% endblock %} {% block content %}
+<h1>Bienvenue sur la page d'accueil des enseignants</h1>
+<article>
+    <footer><a href="/SAE_GA/Enseignant/ajout">Ajouter un enseignants</a></footer>
+<ol>
+    {% for l in liste %}
+    <li> {{l}} <a href="/SAE_GA/Enseignant/affiche/{{l.id}}">Afficher les informations de l'enseignant</a> <a
+            href="/SAE_GA/Enseignant/update/{{l.id}}">Actualiser les informations de l'enseignant</a> <a href="/SAE_GA/Enseignant/delete/{{l.id}}">Supprimer l'enseignant</a></li>
+    {% endfor %}
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Formulaire de saisie d'un enseignant{% endblock %} {% block content %}
+<h1>Saisie d'un nouvelle enseignant:</h1>
+    {% if id is None %}
+        <form action="traitement" method="post">
+    {% else %}
+        <form method="post" action="/SAE_GA/Enseignant/updatetraitement/{{id}}/">
+    {% endif %}
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="envoyer les données de l'enseignant">
+</form>
+
+{% endblock %}

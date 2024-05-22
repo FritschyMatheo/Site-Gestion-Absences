@@ -22,4 +22,13 @@ urlpatterns = [
     path('Groupe/update/<int:id>/', grp_etudiant_views.update),
     path('Groupe/updatetraitement/<int:id>/', grp_etudiant_views.updatetraitement),
     path('Groupe/delete/<int:id>', grp_etudiant_views.delete),
+
+    #enseignant_views
+    path('Enseignant/ajout', enseignant_views.ajout),
+    path('Enseignant/traitement', enseignant_views.traitement),
+    path('Enseignant/accueil', enseignant_views.accueil),
+    path('Enseignant/affiche/<int:id>/', enseignant_views.affiche),
+    path('Enseignant/update/<int:id>/', enseignant_views.update),
+    path('Enseignant/updatetraitement/<int:id>/', enseignant_views.updatetraitement),
+    path('Enseignant/delete/<int:id>', enseignant_views.delete),
 ]

@@ -7,7 +7,7 @@ def ajout(request):
         form = CoursForm(request)
         if form.is_valid():
             Cours = form.save()
-            return render(request,"SAE_GA/Cours/traitement.html",{"Cours" : Cours})
+            return render(request,"SAE_GA/Cours/affiche.html",{"Cours" : Cours})
         else:
             return render(request,"SAE_GA/Cours/ajout.html",{"form": form})
     else :
@@ -18,7 +18,7 @@ def traitement(request):
     lform = CoursForm(request.POST)
     if lform.is_valid():
         cours = lform.save()
-        return render(request, "SAE_GA/Cours/traitement.html", {"cours" : cours})
+        return render(request, "SAE_GA/Cours/affiche.html", {"cours" : cours})
     else:
         return render(request, "SAE_GA/Cours/ajout.html", {"form" : lform})
     

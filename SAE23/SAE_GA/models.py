@@ -6,7 +6,7 @@ class Groupe(models.Model):
     nom = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine = f"Nom: {self.nom}"
+        chaine = f"Nom : {self.nom}"
         return chaine
 
 class Cours(models.Model):
@@ -18,4 +18,13 @@ class Cours(models.Model):
 
     def __str__(self):
         chaine = f"Le cours {self.titre} ayant lieu le {self.date} dure {self.duree} et est enseigné par {self.enseignant}."
+        return chaine
+
+
+class Enseignant(models.Model):
+    nom = models.CharField(max_length=100)
+    prenom = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    def __str__(self):
+        chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}"
         return chaine
