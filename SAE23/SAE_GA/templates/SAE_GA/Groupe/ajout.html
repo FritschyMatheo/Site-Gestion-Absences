@@ -1,0 +1,16 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Formulaire de saisie d'un groupe d'étudiants{% endblock %} {% block content %}
+<h1>Saisie d'un nouveau groupe d'étudiants:</h1>
+<article>
+    {% if id is None %}
+        <form action="traitement" method="post">
+    {% else %}
+        <form method="post" action="/SAE_GA/Groupe/updatetraitement/{{id}}/">
+    {% endif %}
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="envoyez les données du groupe">
+</form>
+</article>
+{% endblock %}

@@ -13,3 +13,11 @@ class CoursForm(ModelForm):
             'duree' : _('Durée'),
             'groupe' : _('Groupe')
         }
+        
+class GroupeForm(ModelForm):
+        class Meta:
+            model = models.Groupe
+            fields = ('nom',)
+            labels = {
+            'nom' : _('Nom'),
+            }
