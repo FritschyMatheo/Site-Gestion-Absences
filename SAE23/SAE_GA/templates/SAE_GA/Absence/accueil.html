@@ -1,0 +1,12 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Page d'accueil des absences{% endblock %} {% block content %}
+<h1>Bienvenue sur la page d'accueil des absences</h1>
+<article>
+    <footer><a href="/SAE_GA/Enseignant/ajout">Ajouter une absence</a></footer>
+<ol>
+    {% for l in liste %}
+    <li> {{l}} <a href="/SAE_GA/Absence/affiche/{{l.id}}">Afficher les informations de l'absence</a> <a
+            href="/SAE_GA/Absence/update/{{l.id}}">Actualiser les informations de l'absence</a> <a href="/SAE_GA/Cours/delete/{{l.id}}">Supprimer l'absence</a></li>
+    {% endfor %}
+{% endblock %}

@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import CoursForm
 from . import models
@@ -37,11 +38,11 @@ def traitementupdate(request, id):
         cours = lform.save(commit=False)
         cours.id = id
         cours.save()
-        return HttpResponseRedirect("/onepiece/equipages")
+        return HttpResponseRedirect("/Cours/accueil")
     else:
-        return render(request, "onepiece/equipages/creationequipage.html", {"form" : lform, "id": id})
+        return render(request, "SAE_GA/Cours/ajout.html", {"form" : lform, "id": id})
     
 def delete(request, id):
     cours = models.Cours.objects.get( pk = id)
     cours.delete()
-    return HttpResponseRedirect("/onepiece/equipages")
+    return HttpResponseRedirect("/Cours/accueil")
