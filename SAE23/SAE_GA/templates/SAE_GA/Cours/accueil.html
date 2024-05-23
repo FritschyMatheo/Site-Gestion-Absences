@@ -1,12 +1,15 @@
 {% extends "SAE_GA/main.html" %}
 
-{% block title %} Page d'accueil des cours{% endblock %} {% block content %}
+{% block title %} Page d'accueil des cours {% endblock %} {% block content %}
 <h1>Bienvenue sur la page d'accueil des cours</h1>
 <article>
-    <footer><a href="/SAE_GA/Enseignant/ajout">Ajouter un cours</a></footer>
+    <footer><a href="/SAE_GA/Cours/ajout">Ajouter un cours</a></footer>
 <ol>
     {% for l in liste %}
-    <li> {{l}} <a href="/SAE_GA/Cours/affiche/{{l.id}}">Afficher les informations de le cours</a> <a
-            href="/SAE_GA/Cours/update/{{l.id}}">Actualiser les informations de le cours</a> <a href="/SAE_GA/Cours/delete/{{l.id}}">Supprimer le cours</a></li>
+  <li> {{l}}  <a href="/SAE_GA/Cours/affiche/{{l.id}}">Afficher les informations du cours </a>  <a href="/SAE_GA/Cours/update/{{l.id}}">Actualiser les informations du cours </a> <a href="/SAE_GA/Cours/delete/{{l.id}}">Effacer les informations du cours </a> </li>
     {% endfor %}
+
+</ol>
+</article>
+
 {% endblock %}

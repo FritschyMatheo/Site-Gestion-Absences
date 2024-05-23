@@ -44,3 +44,14 @@ class EtudiantForm(ModelForm):
             'groupe' : _('Groupe'),
             'photo' : _('Photo')
         }
+
+class AbsenceForm(ModelForm):
+    class Meta:
+        model = models.Absence
+        fields = ('etudiant', 'cours', 'accepte', 'justification')
+        labels = {
+            'etudiant' : _('Etudiant'),
+            'cours' : _('Cours'),
+            'accepte' : _('Accepte'),
+            'justification' : _('Justification')
+        }

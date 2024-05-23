@@ -30,6 +30,13 @@ class Absence(models.Model):
     accepte=models.BooleanField()
     justification=models.TextField(null = True, blank = False)
 
+    def __str__(self):
+        if self.accepte == True:
+            chaine = f"L'étudiant {self.etudiant} n'était pas présent au cours de {self.cours}. Absence acceptée."
+        else :
+            chaine = f"L'étudiant {self.etudiant} n'était pas présent au cours de {self.cours}. Absence refusée car justification non valable {self.justification}"
+        return chaine
+
 class Enseignant(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)

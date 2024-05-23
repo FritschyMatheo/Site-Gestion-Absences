@@ -6,8 +6,17 @@ urlpatterns = [
     path('index/', views.index),
 
 
+    #absence_views
 
 
+    #cours_views
+    path('Cours/ajout', cours_views.ajout),
+    path('Cours/traitement', cours_views.traitement),
+    path('Cours/accueil', cours_views.accueil),
+    path('Cours/affiche/<int:id>/', cours_views.affiche),
+    path('Cours/update/<int:id>/', cours_views.update),
+    path('Cours/updatetraitement/<int:id>/', cours_views.updatetraitement),
+    path('Cours/delete/<int:id>', cours_views.delete),
 
     #grp_etudiant_views
     path('Groupe/ajout', grp_etudiant_views.ajout),
