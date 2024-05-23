@@ -6,24 +6,6 @@ urlpatterns = [
     path('index/', views.index),
 
 
-    #cours_views.py
-    path('Cours/ajout', cours_views.ajout),
-    path('Cours/traitement', cours_views.traitement),
-    path('Cours/accueil', cours_views.accueil),
-    path('Cours/affiche/<int:id>/', cours_views.affiche),
-    path('Cours/update/<int:id>/', cours_views.update),
-    path('Cours/updatetraitement/<int:id>/', cours_views.updatetraitement),
-    path('Cours/delete/<int:id>', cours_views.delete),
-
-
-    #absence_views.py
-    path('Absence/ajout', absence_views.ajout),
-    path('Absence/traitement', absence_views.traitement),
-    path('Absence/accueil', absence_views.accueil),
-    path('Absence/affiche/<int:id>/', absence_views.affiche),
-    path('Absence/update/<int:id>/', absence_views.update),
-    path('Absence/updatetraitement/<int:id>/', absence_views.updatetraitement),
-    path('Absence/delete/<int:id>', absence_views.delete),
 
 
 

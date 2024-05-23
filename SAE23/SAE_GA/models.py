@@ -22,11 +22,18 @@ class Cours(models.Model):
         chaine = f"Le cours {self.titre} ayant lieu le {self.date} dure {self.duree} et est enseigné par {self.enseignant}."
         return chaine
 
+class Absence(models.Model):
+    etudiant=models.CharField(max_length=100)
+    #etudiant=models.ForeignKey("etudiant", on_delete=models.CASCADE, default=None)
+    cours=models.CharField(max_length=100)
+    #cours=models.ForeignKey("cours", on_delete=models.CASCADE, default=None)
+    accepte=models.BooleanField()
+    justification=models.TextField(null = True, blank = False)
 
 class Enseignant(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     def __str__(self):
         chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}"
         return chaine
@@ -35,7 +42,7 @@ class Enseignant(models.Model):
 class Etudiant(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     groupe = models.CharField(max_length=100)
     photo = models.ImageField(null=True)
     def __str__(self):
