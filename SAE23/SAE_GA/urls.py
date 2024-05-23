@@ -7,7 +7,13 @@ urlpatterns = [
 
 
     #absence_views
-
+    path('Absence/ajout', absence_views.ajout),
+    path('Absence/traitement', absence_views.traitement),
+    path('Absence/accueil', absence_views.accueil),
+    path('Absence/affiche/<int:id>/', absence_views.affiche),
+    path('Absence/update/<int:id>/', absence_views.update),
+    path('Absence/updatetraitement/<int:id>/', absence_views.updatetraitement),
+    path('Absence/delete/<int:id>', absence_views.delete),
 
     #cours_views
     path('Cours/ajout', cours_views.ajout),

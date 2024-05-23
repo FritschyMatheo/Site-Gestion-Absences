@@ -1,0 +1,14 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Formulaire de saisie d'une absence{% endblock %} {% block content %}
+        <h1>Saisie d'un nouvelle absense :</h1>
+        {% if id is None %}
+                <form action="traitement" method="post">
+        {% else %}
+                <form method="post" action="/SAE_GA/Absence/updatetraitement/{{id}}/">
+        {% endif %}
+        {% csrf_token %}
+        {{form.as_ul}}
+        <input type="submit" value="envoyer les données de l'absence">
+
+{% endblock %}
