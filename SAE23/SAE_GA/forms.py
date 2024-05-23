@@ -32,3 +32,15 @@ class EnseignantForm(ModelForm):
             'prenom' : _('Prénom'),
             'email' : _('Email')
         }
+
+class EtudiantForm(ModelForm):
+    class Meta:
+        model = models.Etudiant
+        fields = ('nom', 'prenom', 'email', 'groupe', 'photo')
+        labels = {
+            'nom' : _('Nom'),
+            'prenom' : _('Prénom'),
+            'email' : _('Email'),
+            'groupe' : _('Groupe'),
+            'photo' : _('Photo')
+        }

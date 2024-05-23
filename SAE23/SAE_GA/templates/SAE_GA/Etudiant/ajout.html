@@ -1,0 +1,15 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %} Formulaire de saisie d'un d'étudiant{% endblock %} {% block content %}
+<h1>Saisie d'un nouveau étudiants :</h1>
+<article>
+    {% if id is None %}
+        <form action="traitement" method="post" enctype="multipart/form-data">
+    {% else %}
+        <form action="/SAE_GA/Etudiant/updatetraitement/{{id}}/" method="post" enctype="multipart/form-data">
+    {% endif %}
+    {% csrf_token %}
+    {{form.as_ul}}
+            <input type="submit" value="envoyez les données de l'étudiant">
+        </form>
+{% endblock %}
