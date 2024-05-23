@@ -30,3 +30,14 @@ class Enseignant(models.Model):
     def __str__(self):
         chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}"
         return chaine
+
+
+class Etudiant(models.Model):
+    nom = models.CharField(max_length=100)
+    prenom = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    groupe = models.CharField(max_length=100)
+    photo = models.ImageField(null=True)
+    def __str__(self):
+        chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}, Groupe : {self.groupe}, Photo : {self.photo}"
+        return chaine

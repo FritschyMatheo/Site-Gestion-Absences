@@ -44,4 +44,13 @@ urlpatterns = [
     path('Enseignant/update/<int:id>/', enseignant_views.update),
     path('Enseignant/updatetraitement/<int:id>/', enseignant_views.updatetraitement),
     path('Enseignant/delete/<int:id>', enseignant_views.delete),
+
+    #etudiant_views
+    path('Etudiant/ajout', etu_views.ajout),
+    path('Etudiant/traitement', etu_views.traitement),
+    path('Etudiant/accueil', etu_views.accueil),
+    path('Etudiant/affiche/<int:id>/', etu_views.affiche),
+    path('Etudiant/update/<int:id>/', etu_views.update),
+    path('Etudiant/updatetraitement/<int:id>/', etu_views.updatetraitement),
+    path('Etudiant/delete/<int:id>', etu_views.delete)
 ]

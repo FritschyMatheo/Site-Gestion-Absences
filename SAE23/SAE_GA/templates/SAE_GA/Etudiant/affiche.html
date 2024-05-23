@@ -1,0 +1,6 @@
+{% extends "SAE_GA/main.html" %}
+
+{% block title %}Affichage {{etudiant.nom}} {{etudiant.prenom}} {% endblock %} {% block content %}
+    {{etudiant}}
+    <img src="{{etudiant.photo.url}}" alt="photo de l'étudiant">
+{% endblock %}
