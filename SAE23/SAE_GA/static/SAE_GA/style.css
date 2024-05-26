@@ -11,9 +11,8 @@ html, body{
 
 #content{
     display: flex;
-    align-items: start;
     flex-grow: 1;
-    background-color:rgb(193, 227, 255) ;
+    background-color: #ffffff;
 }
 
 body{
@@ -70,8 +69,33 @@ article{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border-radius: 8px;
-    border: black;
+    border-radius: 12px;
+    background-color:rgb(193, 227, 255) ;
+}
+
+article.aside{
+    float: left;
+    width: calc(20% / 0.7 - 10px);
+    margin: 5px;
+    margin-left: 0px;
+    flex-grow: 1;
+}
+
+article.container{
+    flex-basis: calc(50% - 10px);
+    
+}
+
+.container-articles{
+    display: inline-flex;
+    width: calc(50% / 0.7);
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: grey solid 2px;
+    margin: 5px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 3px;
 }
 
 article footer{
