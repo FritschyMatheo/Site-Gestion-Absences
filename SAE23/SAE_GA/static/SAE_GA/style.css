@@ -47,7 +47,7 @@ h3,h4{
 }
 
 nav{
-    background-color: #8ac1ff;
+    background-color: #0053b3;
     padding: 5px;
     display: flex;
     justify-content: space-around;
@@ -75,6 +75,11 @@ img{
     border-radius: 6px;
 }
 
+img.affiche{
+    width: 128px;
+    height: auto;
+}
+
 /*------------ Articles ------------*/
 
 
@@ -85,7 +90,7 @@ article{
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 12px;
-    background-color:rgb(193, 227, 255) ;
+    background-color:rgb(79, 169, 243) ;
 }
 
 article.aside{

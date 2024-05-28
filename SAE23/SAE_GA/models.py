@@ -53,5 +53,5 @@ class Etudiant(models.Model):
     groupe = models.CharField(max_length=100)
     photo = models.ImageField(null=True)
     def __str__(self):
-        chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}, Groupe : {self.groupe}, Photo : {self.photo}"
+        chaine = f"{self.nom.upper()} {self.prenom}, groupe : {self.groupe}"
         return chaine
