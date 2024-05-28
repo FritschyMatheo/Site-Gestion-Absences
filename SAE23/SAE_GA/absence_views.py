@@ -4,7 +4,7 @@ from . import models
 def ajout(request):
     if request.method == "POST":
         form = AbsenceForm(request)
-        return render(request, "SAE_GA/Absence/ajout.html", {"form" : form})
+        return render(request, "SAE_GA/Absence/ajout.html", {"form" : form, "id": None})
     else :
         form = AbsenceForm()
         return render(request, "SAE_GA/Absence/ajout.html", {"form" : form})
@@ -40,7 +40,7 @@ def updatetraitement(request, id):
         absence.save()
         return HttpResponseRedirect("/SAE_GA/Absence/accueil")
     else :
-        return render(request, "SAE_GA/Absence/ajout.html", {"form" : lform})
+        return render(request, "SAE_GA/Absence/ajout.html", {"form" : lform, "id": id})
 
 def delete(request, id):
     absence = models.Absence.objects.get(pk=id)

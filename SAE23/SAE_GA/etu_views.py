@@ -38,7 +38,6 @@ def update(request, id):
             return redirect('SAE_GA/Etudiant/accueil.html')
     else:
         form = EtudiantForm(instance=etudiant)
-
     return render(request,"SAE_GA/Etudiant/ajout.html",{"form":form, "id": id})
 
 def updatetraitement(request, id):
@@ -49,7 +48,7 @@ def updatetraitement(request, id):
         etudiant.save()
         return HttpResponseRedirect("/SAE_GA/Etudiant/accueil")
     else :
-        return render(request, "SAE_GA/Etudiant/ajout.html", {"form" : lform})
+        return render(request, "SAE_GA/Etudiant/ajout.html", {"form" : lform, "id": id})
 
 def delete(request, id):
     etudiant = models.Etudiant.objects.get(pk=id)

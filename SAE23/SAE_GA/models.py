@@ -6,27 +6,27 @@ class Groupe(models.Model):
     nom = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine = f"Nom : {self.nom}"
+        chaine = f"Nom du groupe : {self.nom}"
         return chaine
 
 class Cours(models.Model):
     titre=models.CharField(max_length=100)
     date=models.DateField(blank=False, null = False)
-    enseignant=models.CharField(max_length=100)
-    #enseignant=models.ForeignKey("enseignant", on_delete=models.CASCADE)
+    #enseignant=models.CharField(max_length=100)
+    enseignant=models.ForeignKey("enseignant", on_delete=models.CASCADE)
     duree=models.TimeField()
-    groupe=models.CharField(max_length=100)
-    #groupe=models.ForeignKey("groupe", on_delete=models.CASCADE, default=None)
+    #groupe=models.CharField(max_length=100)
+    groupe=models.ForeignKey("groupe", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chaine = f"Le cours {self.titre} ayant lieu le {self.date} dure {self.duree} et est enseigné par {self.enseignant}."
+        chaine = f"Le cours de {self.titre} ayant lieu le {self.date} est encadré par {self.enseignant}. Il dure {self.duree}."
         return chaine
 
 class Absence(models.Model):
-    etudiant=models.CharField(max_length=100)
-    #etudiant=models.ForeignKey("etudiant", on_delete=models.CASCADE, default=None)
-    cours=models.CharField(max_length=100)
-    #cours=models.ForeignKey("cours", on_delete=models.CASCADE, default=None)
+    #etudiant=models.CharField(max_length=100)
+    etudiant=models.ForeignKey("etudiant", on_delete=models.CASCADE, default=None)
+    #cours=models.CharField(max_length=100)
+    cours=models.ForeignKey("cours", on_delete=models.CASCADE, default=None)
     accepte=models.BooleanField()
     justification=models.TextField(null = True, blank = False)
 
@@ -42,7 +42,7 @@ class Enseignant(models.Model):
     prenom = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     def __str__(self):
-        chaine = f"Nom : {self.nom}, Prénom : {self.prenom}, Email: {self.email}"
+        chaine = f"{self.nom.upper()} {self.prenom}"
         return chaine
 
 

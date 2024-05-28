@@ -4,7 +4,7 @@ from . import models
 def ajout(request):
     if request.method == "POST":
         form = CoursForm(request)
-        return render(request,"SAE_GA/Cours/ajout.html",{"form" : form})
+        return render(request,"SAE_GA/Cours/ajout.html",{"form" : form, "id": None})
     else :
         form = CoursForm()
         return render(request,"SAE_GA/Cours/ajout.html",{"form" : form})
@@ -38,7 +38,7 @@ def updatetraitement(request, id):
         cours.save()
         return HttpResponseRedirect("/SAE_GA/Cours/accueil")
     else :
-        return render(request, "SAE_GA/Cours/ajout.html", {"form" : lform})
+        return render(request, "SAE_GA/Cours/ajout.html", {"form" : lform, "id": id})
 
 def delete(request, id):
     cours = models.Cours.objects.get(pk=id)

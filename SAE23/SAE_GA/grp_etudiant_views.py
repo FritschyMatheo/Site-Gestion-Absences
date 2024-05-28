@@ -4,7 +4,7 @@ from . import models
 def ajout(request):
     if request.method == "POST":
         form = GroupeForm(request)
-        return render(request, "SAE_GA/Groupe/ajout.html", {"form" : form})
+        return render(request, "SAE_GA/Groupe/ajout.html", {"form" : form, "id": None})
     else :
         form = GroupeForm()
         return render(request, "SAE_GA/Groupe/ajout.html", {"form" : form})
@@ -40,7 +40,7 @@ def updatetraitement(request, id):
         groupe.save()
         return HttpResponseRedirect("/SAE_GA/Groupe/accueil")
     else :
-        return render(request, "SAE_GA/Groupe/ajout.html", {"form" : lform})
+        return render(request, "SAE_GA/Groupe/ajout.html", {"form" : lform, "id": id})
 
 
 def delete(request, id):
