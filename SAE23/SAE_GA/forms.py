@@ -52,6 +52,6 @@ class AbsenceForm(ModelForm):
         labels = {
             'etudiant' : _('Etudiant'),
             'cours' : _('Cours'),
-            'accepte' : _('Accepte'),
+            'accepte' : _('L\'absence est-elle acceptée :'),
             'justification' : _('Justification')
         }

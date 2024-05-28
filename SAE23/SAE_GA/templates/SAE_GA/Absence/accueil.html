@@ -3,13 +3,16 @@
 {% block title %} Page d'accueil des absences{% endblock %} {% block content %}
 <h1>Bienvenue sur la page d'accueil des absence</h1>
 <article>
-    <footer><a href="/SAE_GA/Absence/ajout">Ajouter une absence</a></footer>
 <ol>
     {% for l in liste %}
     <li>{{l}} <a href="/SAE_GA/Absence/affiche/{{l.id}}">Afficher les informations de l'absence</a> <a href="/SAE_GA/Absence/update/{{l.id}}">Actualiser les informations de l'absence</a> <a href="/SAE_GA/Absence/delete/{{l.id}}">Effacer les informations de l'absence</a></li>
     {% endfor %}
 
 </ol>
+<footer>
+    <a href="/SAE_GA/Absence/ajout">Ajouter une absence</a>
+    <a href="/SAE_GA/index">Accueil</a>
+  </footer>
 </article>
 
 {% endblock %}

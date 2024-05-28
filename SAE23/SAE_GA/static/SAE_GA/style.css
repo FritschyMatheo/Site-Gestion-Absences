@@ -76,8 +76,12 @@ img.etudiant{
 }
 
 img.affiche{
-    width: 128px;
+    width: 256px;
     height: auto;
+}
+
+li{
+    margin-block-end: 12px;
 }
 
 /*------------ Articles ------------*/
@@ -111,14 +115,11 @@ article.container li,article.container a{
     text-align: start;
 }
 
-div.duo{
-    display: flex;
-    align-content: center;
-}
-
-.bouton a, .bouton{
+a.bouton{
     background-color: #4e4c4a;
     border-radius: 8px;
+    padding: 5px;
+    margin-block-end: 6px;
 }
 
 .container-articles{
