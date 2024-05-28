@@ -3,14 +3,24 @@
 {% block title %} Page d'accueil des étudiants{% endblock %} {% block content %}
 <h1>Bienvenue sur la page d'accueil des étudiants</h1>
 <article>
-<footer><a href="/SAE_GA/Etudiant/ajout">Ajouter un groupe étudiants</a></footer>
 <ol>
     {% for l in liste %}
-        <li>{{l}}<a href="/SAE_GA/Etudiant/affiche/{{l.id}}">Afficher les informations de l'étudiant</a> <a
-                href="/SAE_GA/Etudiant/update/{{l.id}}">Actualiser les informations de l'étudiant</a><a href="/SAE_GA/Etudiant/delete/{{l.id}}">Effacer les informations de l'étudiant</a></li>
+        <li>
+            {{l}}
+            <img src="{{l.photo.url}}" alt="photo de l'étudiant">
+            <div class="crud">
+                <a href="/SAE_GA/Etudiant/affiche/{{l.id}}">Afficher</a>
+                <a href="/SAE_GA/Etudiant/update/{{l.id}}">Modifier</a>
+                <a href="/SAE_GA/Etudiant/delete/{{l.id}}">Supprimer</a>
+            </div>
+        </li>
 
     {% endfor %}
 </ol>
+<footer class="crud">
+    <a href="/SAE_GA/Etudiant/ajout">Ajouter un groupe étudiants</a>
+    <a href="/SAE_GA/index">Accueil</a>
+</footer>
 </article>
 
 {% endblock %}

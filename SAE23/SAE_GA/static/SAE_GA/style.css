@@ -65,6 +65,15 @@ a:hover{
     color: #ff2020;
 }
 
+img{
+    width: 64px;
+    height: auto;
+}
+
+.crud{
+    background-color: #4e4c4a;
+    border-radius: 6px;
+}
 
 /*------------ Articles ------------*/
 
