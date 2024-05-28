@@ -6,7 +6,7 @@ from . import models
 def ajout(request):
     if request.method == "POST":
         form = EtudiantForm(request)
-        return render(request,"SAE_GA/Etudiant/ajout.html", {"form" : form})
+        return render(request,"SAE_GA/Etudiant/ajout.html", {"form" : form, "id": None})
     else :
         form = EtudiantForm()
         return render(request,"SAE_GA/Etudiant/ajout.html", {"form" : form})

@@ -50,7 +50,8 @@ class Etudiant(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-    groupe = models.CharField(max_length=100)
+    #groupe = models.CharField(max_length=100)
+    groupe = models.ForeignKey("groupe", on_delete=models.CASCADE, default=None)
     photo = models.ImageField(null=True)
     def __str__(self):
         chaine = f"{self.nom.upper()} {self.prenom}, groupe : {self.groupe}"

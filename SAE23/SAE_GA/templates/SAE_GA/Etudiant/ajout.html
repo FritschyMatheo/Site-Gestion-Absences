@@ -4,7 +4,7 @@
 <h1>Saisie d'un nouveau étudiants :</h1>
 <article>
     {% if id is None %}
-        <form action="traitement" method="post" enctype="multipart/form-data">
+        <form action="/SAE_GA/Etudiant/traitement" method="post" enctype="multipart/form-data">
     {% else %}
         <form action="/SAE_GA/Etudiant/updatetraitement/{{id}}/" method="post" enctype="multipart/form-data">
     {% endif %}
