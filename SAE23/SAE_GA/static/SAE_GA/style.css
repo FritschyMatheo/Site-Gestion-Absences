@@ -47,7 +47,7 @@ h3,h4{
 }
 
 nav{
-    background-color: #0053b3;
+    background-color: #015cc4;
     padding: 5px;
     display: flex;
     justify-content: space-around;
@@ -65,7 +65,7 @@ a:hover{
     color: #ff2020;
 }
 
-img{
+img.etudiant{
     width: 64px;
     height: auto;
 }
@@ -90,7 +90,7 @@ article{
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 12px;
-    background-color:rgb(79, 169, 243) ;
+    background-color:rgb(92, 169, 233) ;
 }
 
 article.aside{

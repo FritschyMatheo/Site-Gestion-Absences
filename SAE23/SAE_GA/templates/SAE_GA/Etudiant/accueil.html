@@ -7,7 +7,7 @@
     {% for l in liste %}
         <li>
             {{l}}
-            <img src="{{l.photo.url}}" alt="photo de l'étudiant">
+            <img class="etudiant" src="{{l.photo.url}}" alt="photo de l'étudiant">
             <div class="crud">
                 <a href="/SAE_GA/Etudiant/affiche/{{l.id}}">Afficher</a>
                 <a href="/SAE_GA/Etudiant/update/{{l.id}}">Modifier</a>
@@ -18,7 +18,7 @@
     {% endfor %}
 </ol>
 <footer class="crud">
-    <a href="/SAE_GA/Etudiant/ajout">Ajouter un groupe étudiants</a>
+    <a href="/SAE_GA/Etudiant/ajout">Ajouter un étudiants</a>
     <a href="/SAE_GA/index">Accueil</a>
 </footer>
 </article>
