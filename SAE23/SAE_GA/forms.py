@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 from . import models
+from django import forms
 
 class CoursForm(ModelForm):
     class Meta:
@@ -55,3 +56,6 @@ class AbsenceForm(ModelForm):
             'accepte' : _('L\'absence est-elle acceptée :'),
             'justification' : _('Justification')
         }
+
+class CSVUploadForm(forms.Form):
+    csv_file = forms.FileField()

@@ -14,6 +14,7 @@ urlpatterns = [
     path('Absence/update/<int:id>/', absence_views.update),
     path('Absence/updatetraitement/<int:id>/', absence_views.updatetraitement),
     path('Absence/delete/<int:id>', absence_views.delete),
+    path('Absence/import/', absence_views.import_absences),
 
     #cours_views
     path('Cours/ajout', cours_views.ajout),
