@@ -58,32 +58,34 @@ def import_absences(request):
     if request.method == 'POST':
         form = CSVUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            csv_file = request.FILES['csv_file']
+            csv_file = request.FILES['csv_file'] # Récupétation du fichier CSV
             try:
-                # Try reading the file with UTF-8 encoding first
+                # Lecture du fichier avec l'encodage UTF-8
                 decoded_file = csv_file.read().decode('utf-8').splitlines()
             except UnicodeDecodeError:
-                # If there's an error, try with ISO-8859-1 encoding
-                csv_file.seek(0)  # Reset file pointer
+                # S'il y a une erreur, lecture avec ISO-8859-1
+                csv_file.seek(0) # Réinitialise le pointeur du fichier
                 decoded_file = csv_file.read().decode('iso-8859-1').splitlines()
 
-            reader = csv.DictReader(decoded_file)
+            reader = csv.DictReader(decoded_file) # Crée un lecteur CSV qui interprète les lignes comme dans un dictionnaire
 
-            # Check if the expected columns exist in the CSV
+            # Cherche les colonnes du fichier CSV des absences
             expected_columns = ['etudiant_id', 'cours_id', 'accepte', 'justification']
             if not all(column in reader.fieldnames for column in expected_columns):
                 messages.error(request, "Le fichier CSV doit contenir les colonnes 'etudiant_id', 'cours_id', 'accepte', 'justification'.")
                 return render(request, 'SAE_GA/Absence/import.html', {'form': form})
 
             for row in reader:
+                # Récupération des valeurs de chaque attribut
                 etudiant_id = row.get('etudiant_id')
                 cours_id = row.get('cours_id')
                 accepte = row.get('accepte', '').lower() == 'true'
                 justification = row.get('justification', '')
 
                 if not etudiant_id or not cours_id:
+                    # Vérifie les identifiants
                     messages.error(request, "Les identifiants 'etudiant_id' et 'cours_id' sont requis.")
-                    continue
+                    continue # Passe à la ligne suivante du CSV
 
                 try:
                     etudiant = Etudiant.objects.get(id=etudiant_id)
@@ -103,7 +105,5 @@ def import_absences(request):
             return HttpResponseRedirect('/SAE_GA/Absence/accueil')
     else:
         form = CSVUploadForm()
-
-    return render(request, 'SAE_GA/Absence/import.html', {'form': form})
 
     return render(request, 'SAE_GA/Absence/import.html', {'form': form})
