@@ -6,7 +6,7 @@ class Groupe(models.Model):
     nom = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine = f"Nom du groupe : {self.nom}"
+        chaine = f"{self.nom}"
         return chaine
 
 class Cours(models.Model):
