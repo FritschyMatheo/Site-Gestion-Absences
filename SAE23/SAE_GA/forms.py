@@ -58,4 +58,4 @@ class AbsenceForm(ModelForm):
         }
 
 class CSVUploadForm(forms.Form):
-    csv_file = forms.FileField()
+    csv_file = forms.FileField(label="Sélectionnez un fichier CSV")
