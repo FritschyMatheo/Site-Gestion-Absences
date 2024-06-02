@@ -1,5 +1,13 @@
 {% extends "SAE_GA/main.html" %}
 
 {% block title %}Affichage {{absence.etudiant}}{% endblock %} {% block content %}
-   <article>{{absence}}</article>
+   <article>
+      <p>Absence de {{absence.etudiant}} au cours de {{absence.cours}}.</p>
+      {% if absence.accepte == True %}
+               <p>L'absence est excusée.</p>
+        {% else %}
+               <p>L'absence n'est pas excusée.</p>
+        {% endif %}
+      <p>Justification : {{absence.justification}}</p>
+   </article>
 {% endblock %}

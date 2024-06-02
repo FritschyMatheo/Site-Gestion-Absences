@@ -1,5 +1,8 @@
 {% extends "SAE_GA/main.html" %}
 
 {% block title %}Affichage {{cours.titre}}{% endblock %} {% block content %}
-   <article>{{cours}}</article>
+   <article>
+      <p>Le cours de {{cours}} a lieu le {{cours.date}} avec l'enseignant : {{cours.enseignant}}. Il dure {{cours.duree}} et a le groupe {{cours.groupe}}</p>
+      <p>id : {{cours.id}}</p>
+   </article>
 {% endblock %}
