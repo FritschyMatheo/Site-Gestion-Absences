@@ -61,18 +61,18 @@ def import_absences(request):
             decoded_file = csv_file.read().decode('utf-8').splitlines()
             reader = csv.DictReader(decoded_file)
             for row in reader:
-                etudiant_id = row['etudiant_id']
-                cours_id = row['cours_id']
-                justifie = row['justifie'].lower() == 'true'
+                etudiant_id = row.get('etudiant_id')
+                cours_id = row.get('cours_id')
+                accepte = row.get('accepte', '').lower() == 'true'
                 justification = row.get('justification', '')
 
                 try:
                     etudiant = Etudiant.objects.get(id=etudiant_id)
                     cours = Cours.objects.get(id=cours_id)
-                    absence = Absence.objects.create(
+                    Absence.objects.create(
                         etudiant=etudiant,
                         cours=cours,
-                        justifie=justifie,
+                        accepte=accepte,
                         justification=justification
                     )
                     absence = form.save()
