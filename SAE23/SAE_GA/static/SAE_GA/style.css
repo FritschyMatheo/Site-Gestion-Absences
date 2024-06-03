@@ -30,6 +30,7 @@ main{
     flex-direction: column;
     justify-content: start;
     flex-grow: 1;
+    background: linear-gradient(rgb(255, 255, 255), rgb(185, 185, 185));
 }
 
 h1{
