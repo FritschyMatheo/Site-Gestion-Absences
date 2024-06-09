@@ -3,11 +3,18 @@
 {% block title %} Page d'accueil des cours {% endblock %} {% block content %}
 <h1>Bienvenue sur la page d'accueil des cours</h1>
 <article>
-<ol>
+  <ol>
     {% for l in liste %}
-  <li> {{l}}  <a href="/SAE_GA/Cours/affiche/{{l.id}}">Afficher les informations du cours </a>  <a href="/SAE_GA/Cours/update/{{l.id}}">Actualiser les informations du cours </a> <a href="/SAE_GA/Cours/delete/{{l.id}}">Effacer les informations du cours </a> </li>
+    <li> 
+        {{l}} 
+        <div class="crud">
+            <a href="/SAE_GA/Enseignant/affiche/{{l.id}}">Afficher</a>
+            <a href="/SAE_GA/Enseignant/update/{{l.id}}">Modifier</a>
+            <a href="/SAE_GA/Enseignant/delete/{{l.id}}">Supprimer</a>
+        </div>
+    </li>
+    
     {% endfor %}
-
 </ol>
 <footer class="crud">
   <a href="/SAE_GA/Cours/ajout">Ajouter un cours</a>

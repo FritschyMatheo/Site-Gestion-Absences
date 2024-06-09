@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
+    color: #ffffff;
 }
 
 html, body{
@@ -11,6 +12,7 @@ html, body{
 
 #content{
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
     background-color: #ffffff;
 }
@@ -23,6 +25,7 @@ body{
 }
 
 main{
+    width: 70%;
     margin: 0px auto;
     padding-inline: 0px;
     padding-block: 16px;
@@ -30,7 +33,6 @@ main{
     flex-direction: column;
     justify-content: start;
     flex-grow: 1;
-    background: linear-gradient(rgb(255, 255, 255), rgb(185, 185, 185));
 }
 
 h1{
@@ -56,7 +58,6 @@ nav{
 }
 
 a{
-    color: #ffffff;
     text-align: center;
     text-decoration: solid;
 }
@@ -73,6 +74,8 @@ img.etudiant{
 
 .crud{
     background-color: #4e4c4a;
+    padding-inline: 6px;
+    padding-block: 2px;
     border-radius: 6px;
 }
 
@@ -83,6 +86,7 @@ img.affiche{
 
 li{
     margin-block-end: 12px;
+    list-style: none;
 }
 
 ol{
@@ -115,7 +119,6 @@ article.container{
 }
 
 article.container li,article.container a{
-    list-style: inside;
     color: #ffffff;
     text-align: start;
 }

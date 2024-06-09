@@ -2,7 +2,8 @@
 
 {% block title %}Affichage {{enseignant.nom}} {{enseignant.prenom}}{% endblock %} {% block content %}
    <article>
-      {{enseignant}}
+      <p>L'enseignant s'appelle : {{enseignant}}</p>
+      <p>id : {{enseignant.id}}</p>
       <footer class="crud"><a href="/SAE_GA/Enseignant/accueil">Liste des enseignants</a></footer>
    </article>
 {% endblock %}

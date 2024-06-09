@@ -1,12 +1,14 @@
 {% extends "SAE_GA/main.html" %}
 
 {% block title %} Formulaire d'importation des absences {% endblock %} {% block content %}
-    <h1>Importer des Absences</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Importer</button>
-    </form>
+    <article>
+        <h1>Importer des Absences</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Importer</button>
+        </form>
+    </article>
 
     {% if messages %}
         <ul>
