@@ -4,9 +4,7 @@ Dossier collaboratif pour le projet d'une application web
 Lien d'accès à l'application une fois lancée : http://127.0.0.1:8000/SAE_GA/index/
 Lien vers le diagramme de Gantt : https://docs.google.com/spreadsheets/d/1d6RenvtC3c0h3syrMU_4JIkwq9jAMNIQzPLKsjbCpBk/edit#gid=0
 
-Schéma de données du site à respecter : 
-
-Vous avez cinq entités principales à gérer :
+Schéma de données du site à respecter dans la base de donnée "dbsae23": 
 
     Groupes d'Étudiants
         id
