@@ -1,4 +1,4 @@
-# Site-Gestion-Absences
+# SAE2.03 - Mettre en place une solution informatique pour l’entreprise - Site Gestion d'Absences
 Dossier collaboratif pour le projet d'une application web
 
 Lien d'accès à l'application une fois lancée : http://127.0.0.1:8000/SAE_GA/index/
